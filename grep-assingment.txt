@@ -1,0 +1,43 @@
+Terrance Mount
+grep-assignment
+1811 November 5 Hadoop
+
+#1 List all the cities that start with the letter "Z".
+	
+	cat cities.txt | grep '^Z'
+	
+#2 list the cities that end with the word "gan".
+
+	cat cities.txt | grep 'gan\>'
+	
+3# List the cities that start with "A", "D",  or "E"
+	
+	cat cities.txt | grep '^[ADE]' 
+	
+4# List the cities that have "a" as the second letter and "r" as there third letter
+	
+	cat cities.txt | grep '\<.ar'
+
+#5 List the cities that don't start with letter "C"
+
+	cat cities.txt | grep -v '^C'
+	
+#6 List the cities that have at least 14 characters.
+	
+	cat cities.txt | grep -i  -E '[a-z\-]{14,}'
+	
+#7 Count how many cities start with the letter "B"
+
+	cat cities.txt | grep -o '^B' | wc -l 
+	
+#8 Count how many times letter "d" repeats
+
+	cat cities.txt | grep -o 'd' | wc -l 
+
+#9 List the cities that end with the same letter, twice.
+
+	cat cities.txt | grep -i -E '(.)\1$'
+
+#10 List the palindrome cities with five characters
+
+	cat cities.txt | grep -iw -E '(.)(.).\2\1'
